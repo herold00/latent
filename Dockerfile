@@ -9,8 +9,8 @@ RUN mkdir n00
 RUN cd n00
 RUN pdm init -n
 RUN pdm add wagtail
-RUN pdm run wagtail start my00
-RUN cd my00
+RUN pdm run wagtail start nz0
+RUN cd nz0
 RUN pdm run python manage.py migrate
 RUN pdm run python manage.py createsuperuser --username heroldzer0 --email 00@node00.net
 RUN SECRET ENV Password
