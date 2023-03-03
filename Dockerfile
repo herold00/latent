@@ -13,6 +13,6 @@ RUN pdm run wagtail start node00
 RUN cd node00
 RUN pdm run python manage.py migrate
 RUN pdm run python manage.py createsuperuser --username heroldzer0 --email 00@node00.net
-SECRET ENV Password
+RUN SECRET ENV Password
 RUN echo "secret is: $Password"
 EXPOSE 80
