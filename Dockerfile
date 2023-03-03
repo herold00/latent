@@ -1,11 +1,18 @@
-FROM node:12-alpine
+FROM alpine:latest
 RUN apk add --no-cache python3-dev musl-dev gcc linux-headers libev-dev caddy
 COPY . .
 RUN python3 -m ensurepip --upgrade
-RUN mkdir /usr/local/srv
 RUN pip3 install pdm
-RUN pdm init
-RUN pdm add wagtail
+RUN mkdir /usr/local/srv
 RUN cd /usr/local/srv
+RUN mkdir node00
+RUN cd node00
+RUN pdm init -n
+RUN pdm add wagtail
 RUN pdm run wagtail start node00
+RUN cd node00
+RUN pdm run python manage.py migrate
+RUN pdm run python manage.py createsuperuser --username heroldzer0 --email 00@node00.net
+SECRET ENV Password
+RUN echo "secret is: $Password"
 EXPOSE 80
