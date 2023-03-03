@@ -5,11 +5,11 @@ RUN python3 -m ensurepip --upgrade
 RUN pip3 install pdm
 RUN mkdir /usr/local/srv
 RUN cd /usr/local/srv
-RUN mkdir node00
-RUN cd node00
+RUN mkdir n00
+RUN cd n00
 RUN pdm init -n
 RUN pdm add wagtail
-RUN pdm run wagtail start node00
+RUN pdm run wagtail start n00
 RUN cd node00
 RUN pdm run python manage.py migrate
 RUN pdm run python manage.py createsuperuser --username heroldzer0 --email 00@node00.net
