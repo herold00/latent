@@ -1,2 +1,2 @@
-# potential
+# latent
 layerfile for webapp.io
