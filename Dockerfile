@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM node:12-alpine
 RUN apk add --no-cache python3-dev musl-dev gcc linux-headers libev-dev caddy
 COPY . .
 RUN python3 -m ensurepip --upgrade
