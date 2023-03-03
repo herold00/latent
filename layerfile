@@ -14,7 +14,7 @@ RUN apt-get update && \
 COPY . .
 SECRET ENV DOCKER_LOGIN
 RUN echo "$DOCKER_LOGIN" | docker login --username heroldzer0 --password-stdin
-RUN docker pull heroldzer0/alpine_openrc_circus_caddy_wagtail:latest
+RUN docker pull docker.io/heroldzer0/alpine_openrc_circus_caddy_wagtail:latest
 RUN docker run -d -p 80:80 image
 
 EXPOSE WEBSITE http://localhost:80
