@@ -5,8 +5,8 @@ RUN python3 -m ensurepip --upgrade
 RUN pip3 install pdm
 RUN mkdir /usr/local/srv
 RUN cd /usr/local/srv
-RUN mkdir n00
-RUN cd n00
+RUN mkdir nz0
+RUN cd nz0
 RUN pdm init -n
 RUN pdm add wagtail
 RUN pdm run wagtail start nz0
