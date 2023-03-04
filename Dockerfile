@@ -9,7 +9,7 @@ WORKDIR node00
 RUN pdm init -n
 RUN pdm add wagtail
 RUN pdm run wagtail start myproject
-WORKDIR node00/myproject
+WORKDIR myproject
 RUN pdm run python3 manage.py migrate
 RUN pdm run python3 manage.py createsuperuser --username heroldzer0 --email 00@node00.net
 RUN SECRET ENV DJANGO_SUPERUSER_PASSWORD
