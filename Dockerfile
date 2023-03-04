@@ -3,7 +3,8 @@ RUN apk -U upgrade --available
 RUN apk add --no-cache python3-dev musl-dev gcc linux-headers libev-dev caddy
 COPY . .
 RUN python3 -m ensurepip --upgrade
-RUN pip3 install pdm wagtail
+RUN pip3 install pdm
+RUN pdm add wagail
 RUN mkdir /usr/local/srv
 RUN cd /usr/local/srv
 RUN mkdir nzerozero
