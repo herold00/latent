@@ -14,5 +14,5 @@ RUN pdm run python3 manage.py migrate
 RUN pdm run python3 manage.py createsuperuser --username heroldzer0 --email 00@node00.net
 ENV DJANGO_SUPERUSER_PASSWORD=$DJANGO_SUPERUSER_PASSWORD
 RUN echo "secret is: $DJANGO_SUPERUSER_PASSWORD"
-RUN pdm run bjcli -w 2 -i 0.0.0.0 -p 9223 myproject.wsgi:application
+RUN pdm run python3 bjcli -w 2 -i 0.0.0.0 -p 9223 myproject.wsgi:application
 EXPOSE 80
