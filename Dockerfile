@@ -9,7 +9,7 @@ RUN mkdir nz0
 RUN cd nz0
 RUN pdm init -n
 RUN pdm add wagtail
-RUN pdm run wagtail start nz0
+RUN wagtail start nz0
 RUN cd nz0
 RUN pdm run python manage.py migrate
 RUN pdm run python manage.py createsuperuser --username heroldzer0 --email 00@node00.net
