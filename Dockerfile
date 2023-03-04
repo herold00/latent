@@ -12,8 +12,10 @@ RUN pdm init -n
 RUN pdm add wagtail
 RUN pdm run wagtail start myproject
 RUN cd myproject
+RUN pwd
+RUN ls
 RUN pdm run python3 manage.py migrate
-RUN pdm run python3 manage.py createsuperuser --username heroldzer0 --email 00@node00.net
+RUN pdm run python3 ./manage.py createsuperuser --username heroldzer0 --email 00@node00.net
 RUN SECRET ENV DJANGO_SUPERUSER_PASSWORD
 RUN echo "secret is: $DJANGO_SUPERUSER_PASSWORD"
 EXPOSE 80
