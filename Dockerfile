@@ -15,4 +15,4 @@ RUN pdm run python3 manage.py createsuperuser --username heroldzer0 --email 00@n
 ENV DJANGO_SUPERUSER_PASSWORD=$DJANGO_SUPERUSER_PASSWORD
 RUN echo "secret is: $DJANGO_SUPERUSER_PASSWORD"
 RUN pdm run python3 manage.py runserver localhost:8000
-EXPOSE WEBSITE http://localhost:8000
+EXPOSE http://localhost:8000
