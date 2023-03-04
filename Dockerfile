@@ -4,12 +4,12 @@ RUN apk add --no-cache python3-dev musl-dev gcc linux-headers libev-dev caddy
 COPY . .
 RUN python3 -m ensurepip --upgrade
 RUN pip3 install pdm
-RUN pdm add wagail
 RUN mkdir /usr/local/srv
 RUN cd /usr/local/srv
 RUN mkdir node00
 RUN cd node00
 RUN pdm init -n
+RUN pdm add wagail
 RUN pdm run wagtail start node00
 RUN cd node00
 RUN pdm run python manage.py migrate
