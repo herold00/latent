@@ -7,13 +7,13 @@ RUN pip3 install pdm
 RUN pdm add wagail
 RUN mkdir /usr/local/srv
 RUN cd /usr/local/srv
-RUN mkdir nzerozero
-RUN cd nzerozero
+RUN mkdir node00
+RUN cd node00
 RUN pdm init -n
-RUN pdm run wagtail start nzerozero
-RUN cd nzerozero
+RUN pdm run wagtail start node00
+RUN cd node00
 RUN pdm run python manage.py migrate
 RUN pdm run python manage.py createsuperuser --username heroldzer0 --email 00@node00.net
-RUN SECRET ENV Password
-RUN echo "secret is: $Password"
+SECRET ENV DJANGO_SUPERUSER_PASSWORD
+RUN echo "secret is: $DJANGO_SUPERUSER_PASSWORD"
 EXPOSE 80
