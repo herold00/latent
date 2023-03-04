@@ -9,7 +9,7 @@ RUN cd /usr/local/srv
 RUN mkdir node00
 RUN cd node00
 RUN pdm init -n
-RUN pdm add wagail
+RUN pdm add wagtail
 RUN pdm run wagtail start node00
 RUN cd node00
 RUN pdm run python manage.py migrate
