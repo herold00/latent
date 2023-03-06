@@ -3,7 +3,7 @@ RUN apk -U upgrade --available
 RUN apk add --no-cache openrc python3-dev musl-dev g++ linux-headers libev-dev caddy
 COPY . .
 RUN python3 -m ensurepip --upgrade
-RUN pip3 install pdm circus
+RUN pip3 install pdm
 RUN mkdir node00
 WORKDIR node00
 RUN pdm init -n
